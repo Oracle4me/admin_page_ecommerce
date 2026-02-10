@@ -1,0 +1,14 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Modules\{{ module }}\Controllers\Api\{{ module }}Controller;
+
+Route::prefix('{{ route }}')
+    ->middleware(['auth:sanctum'])
+    ->group(function () {
+        Route::get('/', [{{ module }}Controller::class, 'index']);
+        Route::post('/', [{{ module }}Controller::class, 'store']);
+        Route::get('/{id}', [{{ module }}Controller::class, 'show']);
+        Route::put('/{id}', [{{ module }}Controller::class, 'update']);
+        Route::delete('/{id}', [{{ module }}Controller::class, 'destroy']);
+    });

@@ -1,0 +1,10 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Modules\{{ module }}\Controllers\Web\{{ module }}ViewController;
+
+Route::middleware(['auth'])
+    ->prefix('admin/{{ route }}')
+    ->group(function () {
+        Route::get('/', [{{ module }}ViewController::class, 'index']);
+    });
